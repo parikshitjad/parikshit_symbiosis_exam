@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Registration</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #5cb85c;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #4cae4c;
+    }
+
+    span {
+        color: red;
+        font-size: 14px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    div {
+        margin-bottom: 20px;
+    }
+</style>
+
+</head>
+<body>
+<h1 align="center">Student Registeration</h1>
+<form th:action="@{studentstatus}" th:object="${student}" method="POST">
+<div>
+<label for="id">Id</label>
+<input type="text" placeholder="Enter your Id" name="id" th:field="*{id}">
+<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+<br>
+<br>
+<label for="name">Name</label>
+<input type="text" placeholder="Enter your Name" name="name" th:field="*{name}">
+<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+<br>
+<br>
+<label for="age">Age</label>
+<input type="text" placeholder="Enter your Age" name="age" th:field="*{age}">
+<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+<br>
+<br>
+<label for="grade">Grade</label>
+<input type="text" placeholder="Enter your Grade" name="grade" th:field="*{grade}">
+<span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span>
+<br>
+<br>
+<label for="username">Username</label>
+<input type="text" placeholder="Enter Username" name="username" th:field="*{username}">
+<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+<br>
+<br>
+<label for="password">Password</label>
+<input type="password" placeholder="Enter Password" name="password" th:field="*{password}">
+<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+<input type="submit">
+
+
+</div>
+<a th:href="@{/studentlogin}">Login Here</a>
+</form>
+
+</body>
+</html>
+
+</body>
+</html>
